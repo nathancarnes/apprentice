@@ -7,7 +7,12 @@
     <?php bloginfo('name'); ?><?php wp_title( '|', true, 'right' ); ?>
   </title>
 
+  <!-- Load style.css -->
   <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+
+  <!-- Load jQuery and theme.js -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/theme.js"></script>
 
   <?php // wp_head(); allows different plugins to add any CSS or JavaScript files they may need ?>
   <?php wp_head(); ?>

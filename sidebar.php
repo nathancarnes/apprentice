@@ -1,33 +1,33 @@
-<?php
-/**
- * The Sidebar containing the primary and secondary widget areas.
- *
- * @package WordPress
- * @subpackage Apprentice
- * @since Apprentice 2.0
- */
-?>
-<?php global $cap; ?>
+<!-- Begin sidebar.php -->
 
-<ul class="widgets">
+<!-- Begin #sidebar -->
+<div id="sidebar">
+  <!-- Begin ul.widgets -->
+  <ul class="widgets">
 
-<?php
-  /* When we call the dynamic_sidebar() function, it'll spit out
-   * the widgets for that widget area. If it instead returns false,
-   * then the sidebar simply doesn't exist, so we'll hard-code in
-   * some default sidebar stuff just in case.
+  <?php
+  /* If you've placed widgets in the Sidebar widget area in the admin under Appearance, those widgets
+   * will appear; otherwise we'll default with some useful information like search and archives
    */
-  if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
+  ?>
+  <?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
+    <li>
+      <?php // Show the search form ?>
+      <?php get_search_form(); ?>
+    </li>
 
-      <li>
-        <?php get_search_form(); ?>
-      </li>
+    <li>
+      <h4>Archives</h4>
+      <ul>
+        <?php // Show monthly archives ?>
+        <?php wp_get_archives( 'type=monthly' ); ?>
+      </ul>
+    </li>
+  <?php endif; ?>
+  </ul>
+  <!-- End ul.widgets -->
 
-      <li>
-        <h4><?php echo $cap->archives_title; ?></h4>
-        <ul>
-          <?php wp_get_archives( 'type=monthly' ); ?>
-        </ul>
-      </li>
-    <?php endif; // end primary widget area ?>
-</ul>
+</div>
+<!-- End #sidebar -->
+
+<!-- End sidebar.php -->

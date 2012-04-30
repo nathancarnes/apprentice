@@ -1,35 +1,20 @@
-<?php
-/*
- * @package WordPress
- * @subpackage Apprentice
- * @since Apprentice 2.0
- */
+<!-- Begin comments.php -->
 
-global $cap;
-?>
-                
-
-<?php if ( post_password_required() ) : ?>
-  <p><?php echo $cap->comments_password_protected; ?></p>
-<?php return; endif; ?>
-
+<?php // if comments are enabled and there are some comments, let's show some comments, eh? ?>
 <?php if ( have_comments() AND comments_open() ) : ?>
-  <section class="comments">
-			<h3 id="comments-title">
-			<?php Apprentice_comments_title(); ?>
-			</h3>
+  <!-- Begin #comment-wrapper -->
+  <div id="comment-wrapper">
+    <h3 id="comments-title">Comments</h3>
 
-			<ol class="comments">
-				<?php wp_list_comments(); ?>
-			</ol>
-
-      <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-        <section class="pagination">
-			    <?php previous_comments_link( $cap->comments_previous ); ?>
-				  <?php next_comments_link( $cap->comments_next ); ?>
-				</section>
-      <?php endif; ?>                          
-  </section>
+    <ol class="comments">
+      <?php // Outputs comments in default WordPress format ?>
+      <?php wp_list_comments(); ?>
+    </ol>
+  </div>
+  <!-- End #comment-wrapper -->
 <?php endif; ?>
 
+<?php // Show default WordPress comment form ?>
 <?php comment_form(); ?>
+
+<!-- End comments.php -->
