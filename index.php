@@ -26,8 +26,8 @@
     <?php // Output the date the post was published ?>
     <div class="date"><?php the_date(); ?></div>
 
-    <?php // the_exerpt(); gives a brief version of the_content(); ?>
-    <?php the_exerpt(); ?>
+    <?php // the_excerpt(); gives a brief version of the_content(); ?>
+    <?php the_excerpt(); ?>
 
     <!-- Begin ul.metadata -->
     <?php // This section of code provides information about the post like category, tags, and number of comments?>
@@ -42,7 +42,7 @@
       <?php // if the post has tags, show them separated by commas ?>
       <?php if ( get_the_tag_list( '' ) ): ?>
         <li class="tags">
-          Tagged <?php get_the_tag_list( '', ', ' ); ?>
+          Tagged <?php echo get_the_tag_list( '', ', ' ); ?>
         </li>
       <?php endif; ?>
 

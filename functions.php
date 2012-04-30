@@ -28,4 +28,11 @@ function apprentice_register_menus() {
   );
 }
 
+
+// Remove rel attribute from the category list (fixes HTML5 validation)
+function remove_category_list_rel($output){
+  return str_replace(' rel="category"', '', $output);
+}
+add_filter('wp_list_categories', 'remove_category_list_rel');
+add_filter('the_category', 'remove_category_list_rel');
 ?>

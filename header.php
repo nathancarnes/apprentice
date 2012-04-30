@@ -4,7 +4,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
   <title>
     <?php // Outputs a page title with your site's name from the WP settings and the individual page/post title, separated by a '|' ?>
-    <?php bloginfo('name'); ?><?php wp_title( '|', true, 'right' ); ?>
+    <?php wp_title( ' - ', true, 'right' ); ?><?php bloginfo('name'); ?>
   </title>
 
   <!-- Load style.css -->
@@ -31,7 +31,7 @@
   </div>
   <!-- End #header -->
 
-  <!-- Begin #main -->
-  <div id="main">
+  <!-- Begin #wrapper -->
+  <div id="wrapper">
 
 <!-- End header.php -->

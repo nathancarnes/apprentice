@@ -1,6 +1,6 @@
 <!-- begin footer.php -->
   </div>
-  <!-- end #main -->
+  <!-- end #wrapper -->
 
   <!-- Begin #footer -->
   <div id="footer">
