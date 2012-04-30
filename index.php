@@ -31,7 +31,7 @@
 
     <!-- Begin ul.metadata -->
     <?php // This section of code provides information about the post like category, tags, and number of comments?>
-    <ul>
+    <ul class="metadata">
       <?php // if the post has categories assigned to it, show them, separated by commas ?>
       <?php if ( count( get_the_category() ) ) : ?>
         <li class="categories">
