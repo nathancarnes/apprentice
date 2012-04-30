@@ -1,8 +1,8 @@
 <?php
 /*
  * @package WordPress
- * @subpackage Bedrock
- * @since Bedrock 2.0
+ * @subpackage Apprentice
+ * @since Apprentice 2.0
  */
 
 global $cap;
@@ -16,7 +16,7 @@ global $cap;
 <?php if ( have_comments() AND comments_open() ) : ?>
   <section class="comments">
 			<h3 id="comments-title">
-			<?php bedrock_comments_title(); ?>
+			<?php Apprentice_comments_title(); ?>
 			</h3>
 
 			<ol class="comments">

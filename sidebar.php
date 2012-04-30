@@ -3,8 +3,8 @@
  * The Sidebar containing the primary and secondary widget areas.
  *
  * @package WordPress
- * @subpackage Bedrock
- * @since Bedrock 2.0
+ * @subpackage Apprentice
+ * @since Apprentice 2.0
  */
 ?>
 <?php global $cap; ?>

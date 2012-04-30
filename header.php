@@ -1,43 +1,32 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Bedrock
- * @since Bedrock 2.0
- */
-?>
-<?php global $cap; ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
   <title>
-    <?php bloginfo('name'); ?>
-    <?php wp_title( '|', true, 'right' ); ?>
+    <?php // Outputs a page title with your site's name from the WP settings and the individual page/post title, separated by a '|' ?>
+    <?php bloginfo('name'); ?><?php wp_title( '|', true, 'right' ); ?>
   </title>
-  <?php if ( $cap->use_reset ) : ?>
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/stylesheets/reset.css">    
-  <?php endif; ?>  
-  <?php if ( $cap->use_scaffold ) : ?>
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/stylesheets/scaffold.css">    
-  <?php endif; ?>
-  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">  
-  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-  <?php
-    if ( is_singular() && get_option( 'thread_comments' ) ) {      
-		  wp_enqueue_script( 'comment-reply' );                  
-		}
-	?>
-	<?php wp_head(); ?>
+
+  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+
+  <?php // wp_head(); allows different plugins to add any CSS or JavaScript files they may need ?>
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-  <header>
-  	<h1>
-  		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-  	</h1>
-  	<p><?php bloginfo( 'description' ); ?></p>
-    <nav>
-  		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-  	</nav>
-  </header>      
-  <section id="main">
+  <!-- Begin #header -->
+  <div id="header">
+    <h1 id="logo">
+      <a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
+    </h1>
+    <p id="tagline"><?php bloginfo( 'description' ); ?></p>
+
+    <?php // This will output the menu you create and assign to the 'Header Menu' position in the admin; otherwise, it will output a Home link and links to each top-level page ?>
+    <?php wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'header-menu' ) ); ?>
+  </div>
+  <!-- End #header -->
+
+  <!-- Begin #main -->
+  <div id="main">
+
+<!-- End header.php -->
