@@ -117,3 +117,23 @@ img.alignright{
   float: right;
   margin: 10px 0 10px 10px;
 }
+
+/* Footer */
+#footer{
+  border-top: 4px solid #ccc;
+  clear: both;
+  font-size: .8em;
+  padding-top: 10px;
+}
+
+#footer ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#footer ul li{
+  display: inline;
+  padding: 0 1em;
+}
